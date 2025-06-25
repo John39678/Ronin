@@ -1,0 +1,110 @@
+Prompt Template for Backend-First Development
+> You are my backend assistant. Your job is to implement only backend logic and API endpoints. Do not generate frontend code or placeholder responses.
+> Create real endpoints with real routes, use an in-memory or temporary database for testing, and provide curl examples for each route.
+> No dummy return values — give actual logic. Let me review before we move to the frontend.
+
+Prompt Template for Real Frontend Integration
+> I want you to focus only on the frontend integration using JavaScript and HTML. 
+> Use real fetch calls or axios to call live API endpoints. Don’t simulate API responses. Do not generate UI tests unless I ask.
+> Assume the backend is working and respond only with code that interacts with the actual endpoints.
+
+Prompt Template for Wiring Frontend to Backend
+> I’ve built a backend with endpoints at /api/data, /api/save, and /api/health. Now help me wire my frontend to those endpoints.
+> Do not create new endpoints or fake data. Use real fetch() calls and handle responses and errors properly.
+> Make sure CORS, method types, and body payloads match what the backend expects.
+
+You're acting as a multi-step developer agent. I want you to do only step 1 of 5. When you finish, say “READY FOR STEP 2.”
+> Do not build ahead. Do not assume future logic. Every step must be confirmed with me before continuing.
+> Step 1: Build a single Express route that accepts POSTed JSON and prints it to the console.
+
+With these templates, you’re giving AI the “rails” it needs to stay focused. The key is breaking the task down and reasserting
+boundaries. Want me to help you design a task flow map for your next AI-coded app — step-by-step tasks with prompt phrasing
+baked in? We can totally co-pilot that.
+
+Full Stack AI App — Flow Map with Prompt Phrasing
+🌱 Phase 0: Define the App Mission & Scope
+Goal: Articulate what this app does, who it’s for, and what tech stack we’re using.
+
+Prompt: > I’m building a [TYPE OF APP] that helps [AUDIENCE] do [GOAL].
+> Stack: Frontend in [Tech], Backend in [Tech], using [LLM or API] for AI features.
+> You are my AI Project Manager. Help break this into 5 major phases, no code yet. Keep it lean.
+
+Phase 1: Frontend Skeleton Only
+Goal: Get visual structure + layout without logic or real data.
+
+Prompt: > Act as a frontend developer. Create only the HTML/CSS layout of the app — no JavaScript, no backend integration.
+> Use placeholder UI where needed (e.g. <div class="menu">, <button>Run Analysis</button>).
+> Pause after generating layout. Do not build interactivity yet.
+
+Phase 2: Backend API Setup — Real Endpoints
+Goal: Set up functional API endpoints with logic but no frontend calls yet.
+
+Prompt: > You are my backend developer. Build actual API endpoints using [e.g. Flask, Express, etc.].
+> No UI or dummy data. Each route must return real results based on minimal logic or sample inputs.
+> Output one route at a time with example curl test. Say “READY FOR NEXT ROUTE” after each.
+
+Phase 3: Hook Up Frontend to Real Backend
+Goal: Link UI with working API. No mocks or stubs.
+
+Prompt: > Now act as a frontend integrator. Update my UI’s JavaScript to call the real endpoints I’ve built.
+> Use fetch() or axios with correct methods, headers, and payloads.
+> Do not simulate data. Show error handling. Stop after wiring one endpoint, then wait for the next.
+
+Phase 4: Local Testing / Troubleshooting
+Goal: Verify data flows work, debug integration pain points.
+
+Prompt: > Help me test the full data flow between frontend, backend, and LLM.
+> Identify possible CORS errors, port issues, or misaligned request payloads.
+> List tools to inspect this (DevTools, Network tab, curl, Postman), and guide me if the request returns 404 or 500.
+
+Phase 5: AI Feature Integration
+Goal: Connect your LLM logic into the backend or as a separate service.
+
+Prompt: > I want to integrate [e.g. OpenAI, Claude, local model] into my backend logic.
+> Help me call the API securely, handle tokens, and route user input to the model via my /analyze endpoint.
+> No demo content. Use actual prompts, and explain how to sanitize inputs.
+
+hase 6: Deployment Plan
+Goal: Prep for deploy across environments with consistent behavior.
+
+Prompt: > I’m ready to deploy this Full Stack AI app. Help me set up environment variables, build scripts, and config for deploying to [Replit/Render/Heroku/Vercel].
+> Warn me about common deployment pitfalls — CORS, static files, dependency mismatches, etc.
+
+Full Stack AI App: Flow Map with Prompt Templates
+🌱 Phase 0: Define Project Scope
+Goal: Frame the app’s purpose and stack.
+
+🗣️ Prompt: > I'm building a [APP TYPE] that helps [USERS] do [FUNCTION]. > Frontend: [HTML/CSS/JS/framework], Backend: [Flask/Express/FastAPI], AI: [LLM/tool]. > Give me 5 phases to build this app with real features, not placeholders.
+
+🧱 Phase 1: Build Frontend Skeleton
+Goal: Pure HTML/CSS structure — no interactivity yet.
+
+🗣️ Prompt: > Create a clean layout in HTML/CSS for this app. Use real component names, but no JavaScript or placeholder data. > I want to see <header>, <section>, and navigation clearly marked. Stop there.
+
+⚙️ Phase 2: Backend API Routes (No UI yet)
+Goal: Fully functional endpoints with real outputs.
+
+🗣️ Prompt: > You’re my backend engineer. Use [Express/Flask/etc.] to build an API with these endpoints: [list]. > No frontend or UI. Use real logic and sample inputs. Provide curl examples for each. Don’t skip input validation.
+
+🔌 Phase 3: Connect UI to Live Endpoints
+Goal: Hook up frontend to backend, no dummy values.
+
+🗣️ Prompt: > Take the UI from Phase 1 and write JavaScript to call the real backend endpoints using fetch(). > No dummy data or simulated responses — show full POST/GET calls with error handling. > Start with one endpoint only.
+
+🧠 Phase 4: Integrate AI Agent or LLM
+Goal: Route user input to/from the AI in the backend.
+
+🗣️ Prompt: > Help me create an AI analysis endpoint that sends input to [OpenAI API or other model] and returns the output. > Secure the token, sanitize input, and format the prompt clearly. No mock returns — hit the real API.
+
+🧪 Phase 5: Test Integration
+Goal: Verify connections work across stack.
+
+🗣️ Prompt: > Assist me in verifying the full flow: UI → API → AI → back to UI. > Show me how to test endpoints with Postman/curl, inspect the browser Network tab, and catch CORS or payload bugs.
+
+🚀 Phase 6: Deployment & Environment Prep
+Goal: Configure for production or cloud.
+
+🗣️ Prompt: > I need to deploy this app to [Replit, Vercel, Render, etc.]. > Help me write start scripts, set environment variables, and fix any CORS/static file issues in deployment. > Warn me about common traps.
+
+Would you like me to turn this into a Copilot Page you can keep open while coding? That way, you can tweak tasks, check your progress, and feed focused prompts to your AI agent step-by-step. I’ve got it ready when you want it.
+
